@@ -20,6 +20,17 @@ This project examines customer churn patterns for a Telecommunications company u
 * **Payment Friction:** The **Electronic Check** method is correlated with the highest churn rate, while automated methods (Credit Card/Bank Transfer) show significantly higher retention.
 
 ---
+## 🛡️ From Analysis to Action: Risk Scoring System
+Instead of just analyzing *past* churn, I implemented a logic-based scoring system (SQL) to identify *current* customers at risk. This allows the retention team to be proactive rather than reactive.
+
+**The "Risk Score" (Scale 1-10) prioritizes customers based on:**
+1.  **Contract Type:** Weighted heavily for Month-to-month users (confirmed as #1 churn driver).
+2.  **Payment Friction:** Flags customers using "Electronic Check" or manual payments.
+3.  **Tenure Vulnerability:** Assigns higher risk to customers in their first 6 months.
+
+*See file: `04_churn_risk_scoring.sql` for the scoring logic.*
+
+---
 
 ## ⚙️ Project Scope & Limitations
 * **Timeframe:** Analysis represents a snapshot in time; longitudinal trends (seasonality) are not included.
